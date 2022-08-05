@@ -20,9 +20,6 @@ class Transcript(object):
         self.textScript = []
 
     def returnTextScript(self):
-        """
-        returns only the text of the transcript
-        """
         textblock = []
         for i in self.timeScript:
             textblock.append(i['text'])
@@ -30,9 +27,6 @@ class Transcript(object):
         return self
     
     def getTranscript(self, link):
-        """
-        returns the transcript of the video
-        """
         sitedata = requests.get(link).text
         splitted_html = sitedata.split('"captions":')
         captions_json = json.loads(
@@ -45,13 +39,11 @@ class Transcript(object):
         return self
 
     def getTranscriptFromLink(self, link):
-        self.transcript = self.getTranscript(link).timeScript
-        return self
+        return self.getTranscript(link)
 
     def getTranscriptFromId(self, ID):
-        url = 'https://www.youtube.com/watch?v={video_id}'.format(video_id=ID)
-        self.transcript = self.getTranscript(url)
-        return self
+        link = 'https://www.youtube.com/watch?v={}'.format(ID)
+        return self.getTranscript(link)
 
     def parse(self, plain_data):
         HTML_TAG_REGEX = re.compile(r'<[^>]*>', re.IGNORECASE)

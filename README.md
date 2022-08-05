@@ -14,3 +14,12 @@ b = Transcript().getTranscriptFromLink('https://www.youtube.com/watch?v=RjEdmrxj
 b.timeScript
 b.textScript
 ```
+
+## output:
+```python
+>>> a.timeScript
+[{'text': '10 9 8 7 6 5 4 3 2 1', 'start': 0.669, 'duration': 12.021}]
+>>> a.textScript
+'10 9 8 7 6 5 4 3 2 1'
+>>>
+```
