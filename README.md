@@ -1,6 +1,6 @@
 # Get Youtube Transcript
 
-Youtube web scraper to get transcript from for video ID or video URL
+Scrapes Youtube to get transcript info by using video ID or video URL
 
 ## example
 ```python
